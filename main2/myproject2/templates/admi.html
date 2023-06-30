@@ -1,0 +1,153 @@
+<style>
+body{
+    background-color:grey;
+    }
+h2{
+font-family:monospace;
+font-size:30px;
+font-color:black;
+}
+input{
+border-radius: 25px;
+font-size:18px;
+box-sizing: border-box;
+ border: 3px solid #ccc;
+background-color:#62529c;
+}
+label{
+font-size:16px;
+font-family:cursive;
+}
+label.gender{
+font-size:20px;
+}
+input[type=submit] {
+        background-color: #62529c;
+        border: none;
+        color: #fff;
+        padding: 10px 25px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      button {
+        background-color: #62529c;
+        border: none;
+        color: #fff;
+        padding: 10px 25px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+         border-radius: 25px;
+         font-size:18px;
+
+      }
+select{
+ border-radius: 25px;
+ background-color: #62529c;
+ width:200px;
+ height:30px;
+ font-size:18px;
+ box-sizing: border-box;
+ border: 3px solid #ccc;
+
+}
+textarea{
+border-radius: 25px;
+width:250px;
+ height:50px;
+ font-size:18px;
+ background-color: #62529c;
+box-sizing: border-box;
+ border: 3px solid #ccc;
+
+}
+checkbox[value=books]
+{
+font-size: 62px;
+ }
+    </style>
+<h2><u>Register Here</u></h2>
+        <form action="app" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+                <label for="name">NAME:</label>
+        <input type="text" name="name" id=name placeholder="enter  your name"><br><br>
+                        <label for="dob">DOB:</label>
+
+                <input type="date" name="dob" id="dob" placeholder="enter your date of birth"><br><br>
+                        <label for="age">AGE:</label>
+
+                <input type="number" name="age" id="age" placeholder="enter your age"><br><br>
+                <label for="gender">GENDER:</label>
+                <select name="gender" id="gender">
+                        <option value="select">select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                </select><br><br>
+                                <label for="phonenumber">PHONE NUMBER:</label>
+
+        <input type="number" name="phonenumber" id="phonenumber" placeholder="enter your mobile number" maxlength="16" size="16"><br><br>
+                                <label for="email">EMAIL:</label>
+
+                <input type="email" name="email" id="email" placeholder="enter your email"><br><br>
+                                <label for="address">ADDRESS:</label>
+
+                <textarea name="address" id="address" placeholder="enter your address"></textarea><br><br>
+                                <label for="department">DEPARTMENTS:</label>
+
+                <select name="departments" id="department" class="department" >
+                <option value="select">select your course</option>
+
+        <optgroup label="B.SC">
+        <option value="B.SC">computer science</option>
+        <option value="B.SC">information technology</option>
+        <option value="B.SC">maths</option>
+        </optgroup>
+                        <optgroup label="BA">
+        <option value="BA">history</option>
+        <option value="BA">english</option>
+        <option value="BA">ecnomics</option>
+        </optgroup>
+                        <optgroup label="Commerce">
+        <option value="commerce">B.com</option>
+        <option value="commerce">Auditing</option>
+        <option value="commerce">Taxation</option>
+        </optgroup>
+        <optgroup label="MA">
+        <option value="MA">history</option>
+        <option value="MA">enlish</option>
+        <option value="MA">economics</option>
+        </optgroup>
+                        <optgroup label="Computer application">
+        <option value="Computer application">BCA</option>
+        <option value="Computer application">MCA</option>
+        <option value="Computer application">software Development</option>
+        </optgroup>
+                </select><br><br>
+                <label for="materialsprovided">MATERIALS PROVIDED:</label><br><br>
+                <input type="checkbox" name="purpose" id="materialsprovided"
+            value="books">books
+        <br>
+        <input type="checkbox" name="purpose"
+            value="uniform">uniform
+        <br>
+        <input type="checkbox" name="purpose"
+            value="lab materials">lab materials
+        <br><br>
+                <label for="purpose">PURPOSE:</label>
+                <select name="purpose" id="purpose">
+                        <option value="select">purpose of visit</option>
+
+        <option value="to visit">To know</option>
+        <option value="to register">To register</option>
+                        <option value="to register">For Enquiry</option>
+
+                </select><br><br>
+    <input type="submit">
+            		<a href="{% url 'logout' %}">
+            		<button class="btn">Signout</button>
+        			</a>
+</form>
+</body>
+{% block body %}
+{% endblock %}
